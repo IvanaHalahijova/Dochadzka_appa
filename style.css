@@ -427,31 +427,65 @@ table.main-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
 
 /* Mobile */
 @media (max-width: 600px) {
-  #screenView { padding: 12px 10px; }
+  #screenView { padding: 10px 8px; }
   .app-header {
     flex-direction: column;
     align-items: flex-start;
-    padding: 16px 18px;
+    padding: 12px 14px;
+    gap: 10px;
   }
-  .header-right { width: 100%; }
-  .header-right .btn { flex: 1; justify-content: center; }
-  .header-logo { height: 36px; }
-  .month-label { min-width: 110px; font-size: 0.82rem; }
-  .emp-select { min-width: 0; width: 100%; }
-  .emp-wrap { width: 100%; }
+  .header-brand { gap: 10px; width: 100%; }
+  .header-title h1 { font-size: 1.1rem; }
+  .header-right { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .header-right .btn { font-size: 0.7rem; padding: 7px 10px; }
+  .header-logo { height: 32px; }
+  .subtitle { font-size: 0.7rem; }
+  
+  .card { padding: 14px 16px; margin-bottom: 12px; }
+  .section-title { font-size: 0.65rem; margin-bottom: 10px; }
+  
+  .controls-left { flex-direction: column; width: 100%; gap: 8px; }
+  .emp-wrap { width: 100%; flex-direction: row; }
   .emp-wrap label { display: none; }
-  .form-grid { grid-template-columns: 1fr 1fr; }
-  .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-  .stat-card { padding: 12px 14px; }
-  .stat-card .stat-value { font-size: 1.3rem; }
-  .btn { min-height: 42px; }
-  .btn-sm { min-height: 36px; }
-  .app-footer { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px 18px; }
-  .footer-info { gap: 4px 14px; }
+  .emp-select { min-width: 0; width: 100%; }
+  
+  .month-nav { width: 100%; }
+  .month-label { min-width: 90px; font-size: 0.75rem; }
+  
+  .form-grid { grid-template-columns: 1fr; gap: 8px; }
+  .form-group { gap: 4px; }
+  .form-group input, .form-group select, .form-group textarea {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+  .form-group label { font-size: 0.65rem; }
+  
+  .stats-grid { grid-template-columns: 1fr; gap: 8px; margin-bottom: 12px; }
+  .stat-card { padding: 10px 12px; }
+  .stat-card .stat-title { font-size: 0.6rem; }
+  .stat-card .stat-value { font-size: 1.2rem; }
+  .stat-card .stat-sub { font-size: 0.65rem; }
+  
+  .table-wrapper { overflow-x: auto; }
+  .main-table { font-size: 0.75rem; }
+  .main-table th { padding: 6px 4px; font-size: 0.6rem; }
+  .main-table td { padding: 6px 4px; }
+  
+  .btn { min-height: 38px; padding: 6px 12px; font-size: 0.7rem; }
+  .btn-sm { min-height: 32px; padding: 4px 8px; font-size: 0.65rem; }
+  
+  .app-footer { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px 14px; }
+  .footer-logo { height: 28px; }
+  .footer-info { gap: 2px 12px; font-size: 0.7rem; }
+  .footer-company { font-size: 0.65rem; }
 }
 
 /* Very small screens */
 @media (max-width: 380px) {
+  #screenView { padding: 8px 6px; }
   .form-grid { grid-template-columns: 1fr; }
   .form-group[style*="grid-column"] { grid-column: 1 !important; }
+  .header-right { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .form-group input, .form-group select, .form-group textarea { font-size: 0.8rem; }
 }
