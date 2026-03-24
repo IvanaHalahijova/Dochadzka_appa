@@ -4,8 +4,16 @@
   "description": "Evidencia dochádzky zamestnancov – Ateliér APPA s.r.o.",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#f8f8f8",
   "theme_color": "#000000",
+  "scope": "./",
+  "screenshots": [
+    {
+      "src": "img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
   "orientation": "portrait-primary",
   "lang": "sk",
   "icons": [

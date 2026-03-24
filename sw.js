@@ -1,4 +1,4 @@
-const CACHE = 'appa-dochadzka-v1';
+const CACHE = 'appa-dochadzka-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -7,7 +7,9 @@ const ASSETS = [
   './manifest.json',
   './img/apple-touch-icon.png',
   './img/appa_logo_biela.png',
-  './img/appa_logo_cierna.png'
+  './img/appa_logo_cierna.png',
+  './img/icon-192.png',
+  './img/icon-512.png'
 ];
 
 // Inštalácia – uloží všetky súbory do cache
@@ -28,20 +30,17 @@ self.addEventListener('activate', e => {
   self.clients.claim();
 });
 
-// Fetch – cache first, fallback na sieť
+// Fetch – priory: sieť > cache (aby súbory boli vždy čerstvé)
 self.addEventListener('fetch', e => {
-  // Preskočí non-GET a cross-origin requesty
   if (e.request.method !== 'GET' || !e.request.url.startsWith(self.location.origin)) return;
 
   e.respondWith(
-    caches.match(e.request).then(cached => {
-      if (cached) return cached;
-      return fetch(e.request).then(response => {
-        // Uloží novú odpoveď do cache
+    fetch(e.request)
+      .then(response => {
         const clone = response.clone();
         caches.open(CACHE).then(cache => cache.put(e.request, clone));
         return response;
-      });
-    })
+      })
+      .catch(() => caches.match(e.request))
   );
 });
