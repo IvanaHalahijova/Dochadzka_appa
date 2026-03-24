@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dochádzka – Ateliér APPA s.r.o.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="icon" href="img/apple-touch-icon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,7 +37,7 @@
       <div class="controls-left">
         <div class="emp-wrap">
           <label>Zamestnanec</label>
-          <select id="empSelect" onchange="onEmployeeChange()" style="padding:8px 12px;border:1.5px solid var(--border);border-radius:6px;font-size:0.88rem;font-family:var(--font);background:var(--bg);min-width:190px;"></select>
+          <select id="empSelect" onchange="onEmployeeChange()" class="emp-select"></select>
           <button class="btn btn-outline btn-sm" onclick="openEmpModal()">Spravovať</button>
         </div>
         <div class="month-nav">
